@@ -23,7 +23,7 @@ PRODUCT_PACKAGES := \
     Email \
     Gallery3D \
     LatinIME \
-    Launcher2 \
+    Launcher3 \
     linaro.android \
     Mms \
     Music \
@@ -35,30 +35,23 @@ PRODUCT_PACKAGES := \
     Updater \
     CalendarProvider \
     SyncProvider \
-    faketsd \
     ZeroXBenchmark \
-    hwcomposer.default \
+    Superuser \
     libmicro \
     powertop \
     powerdebug \
-    mmtest \
     $(ZEROXBENCHMARK_NATIVE_APPS) \
-    GLMark2 \
-    libglmark2-android \
-    gatord \
     LinaroWallpaper \
     LiveWallpapers \
     LiveWallpapersPicker \
     MagicSmokeWallpapers \
     VisualizationWallpapers \
     librs_jni \
-    mediaframeworktest \
     libtinyalsa \
     tinyplay \
     tinycap \
     tinymix \
     libaudioutils \
-    ConnectivityManagerTest \
     iozone \
     memtester \
     stress \
@@ -66,9 +59,6 @@ PRODUCT_PACKAGES := \
     DisableSuspend \
     libncurses \
     htop \
-    cyclictest \
-    sysbench \
-    bctest \
     idlestat
 
 #packages we are using for benchmarking
@@ -76,52 +66,16 @@ PRODUCT_PACKAGES := \
 # older builds still get v8shell.
 PRODUCT_PACKAGES += \
     v8shell \
-    d8 \
-    skia_bench
+    d8
 
 
 PRODUCT_PACKAGES += \
     lava-blackbox \
-    lava-gtest-wrapper \
-    lava-wrapper-finder-gtest \
     ObjenesisTck \
     AudioInRecord \
     libembunit \
     android-mock-runtimelib \
-    android-mock-generatorlib \
-    ffi-test \
-    apache-harmony-tests \
-    apache-harmony-tests-hostdex \
-    EGL_test \
-    BufferQueue_test \
-    SurfaceTexture_test \
-    gtest-death-test_test \
-    gtest-filepath_test \
-    gtest-linked_ptr_test \
-    gtest-message_test \
-    gtest-options_test \
-    gtest-port_test \
-    gtest-test-part_test \
-    gtest-typed-test2_test \
-    gtest-typed-test_test \
-    gtest_environment_test \
-    gtest_prod_test \
-    gtest_repeat_test \
-    gtest_stress_test \
-    webrtc_apm_unit_test \
-    BasicHashtable_test \
-    BlobCache_test \
-    InputChannel_test \
-    InputEvent_test \
-    InputPublisherAndConsumer_test \
-    Looper_test \
-    ObbFile_test \
-    String8_test \
-    Unicode_test \
-    Vecotr_test \
-    ZipFileRO_test \
-    keymaster_test \
-    libgui_test
+    android-mock-generatorlib 
 
 V8BENCHMARKS := $(foreach js,$(wildcard $(TOP)/external/v8/benchmarks/*.js),\
 	$(js):data/benchmark/v8/$(notdir $(js)))
@@ -160,4 +114,3 @@ endif
 
 $(foreach howto,$(HOWTOS),$(eval $(call copy-howto,$(howto))))
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
