@@ -36,7 +36,7 @@ PRODUCT_PACKAGES := \
     CalendarProvider \
     SyncProvider \
     ZeroXBenchmark \
-    Superuser \
+    su \
     libmicro \
     powertop \
     powerdebug \
